@@ -17,6 +17,10 @@ public class PressureService {
         pressureMapper.insertPressureData(pressureSensor);
     }
 
+    public List<PressureSensor> getAllPressureInformation() {
+        return pressureMapper.listPressureSensor();
+    }
+
 //    public void entryPressureSensor(List<PressureSensor> pressureSensorList) {
 //        pressureMapper.insertPressureData(pressureSensorList);
 //    }

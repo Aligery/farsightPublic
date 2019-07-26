@@ -1,6 +1,8 @@
 package ru.qtsolar.farsight;
 
 
+import kong.unirest.JacksonObjectMapper;
+import kong.unirest.Unirest;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +20,7 @@ public class ConfigAndStartGateway {
 
 
     public static void main(String[] args) {
-
+        Unirest.config().setObjectMapper(new JacksonObjectMapper()); //need once to right configure, if have some problem see Unirest dock
         SpringApplication.run(ConfigAndStartGateway.class);
     }
 }
