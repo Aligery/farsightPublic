@@ -1,20 +1,25 @@
-package ru.qtsolar.farsight.data;
+package ru.qtsolar.farsight.domain;
 
+
+import org.springframework.data.redis.core.RedisHash;
+
+@RedisHash("pressureSensors")
 public class PressureSensor {
-    private long id;
+    private Long id;
     private String value;
 
     public PressureSensor(){}
-    public PressureSensor(long id, String value) {
+
+    public PressureSensor(Long id, String value) {
         this.id = id;
         this.value = value;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

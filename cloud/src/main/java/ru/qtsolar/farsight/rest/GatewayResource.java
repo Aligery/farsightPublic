@@ -3,7 +3,7 @@ package ru.qtsolar.farsight.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.qtsolar.farsight.data.PressureSensor;
+import ru.qtsolar.farsight.domain.PressureSensor;
 import ru.qtsolar.farsight.service.PressureService;
 
 import java.util.List;
