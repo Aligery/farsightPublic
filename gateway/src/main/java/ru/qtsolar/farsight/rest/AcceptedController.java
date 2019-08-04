@@ -1,7 +1,6 @@
 package ru.qtsolar.farsight.rest;
 
 
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,6 @@ public class AcceptedController {
     CacheService cacheService;
 
     @GetMapping(value="/list")
-    @ApiOperation(value = "", notes = "")
     public ResponseEntity<List<PressureSensor>> checkHealth(){
 
         return ResponseEntity.ok().body(cacheService.getAllPressureSensor());
@@ -28,7 +26,6 @@ public class AcceptedController {
     }
 
     @PostMapping(value = "/load")
-    @ApiOperation(value = "", notes = "t")
     public ResponseEntity<Long> checkHealth(@RequestBody PressureSensor pressureSensor){
         return ResponseEntity.ok().body(cacheService.loadPressureSensor(pressureSensor));
     }

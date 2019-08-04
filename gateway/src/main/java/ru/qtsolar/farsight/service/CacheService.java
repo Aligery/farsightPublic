@@ -33,17 +33,6 @@ public class CacheService {
     }
 
 
-    @Scheduled(fixedRate = 10000)
-    public void entryCacheSensorToCloud() {
-        System.out.println("SENDED EVERY 5000ms");
-        //object mapper
-        //Unirest realisation to cloud how to get ip cloud???
 
-        pressureSensorCache.getAll().forEach(k->{
-            Unirest.post("http://localhost:8081/gateway/entryPressureSensor")
-                    .header("content-type", "application/json")
-                    .body(k).asEmpty();
-        });
-    }
 
 }

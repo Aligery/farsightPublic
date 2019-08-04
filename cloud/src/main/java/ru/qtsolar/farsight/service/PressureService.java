@@ -1,9 +1,11 @@
 package ru.qtsolar.farsight.service;
 
+import org.apache.commons.collections.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.qtsolar.farsight.data.PressureSensor;
-import ru.qtsolar.farsight.mapper.PressureMapper;
+import org.springframework.util.CollectionUtils;
+import ru.qtsolar.farsight.domain.PressureSensor;
+import ru.qtsolar.farsight.redis.repository.PressureSensorsRepository;
 
 import java.util.List;
 
@@ -11,13 +13,18 @@ import java.util.List;
 public class PressureService {
 
     @Autowired
-    PressureMapper pressureMapper;
+    PressureSensorsRepository pressureSensorsRepository;
 
     public void entryPressureSensor(PressureSensor pressureSensor) {
-        pressureMapper.insertPressureData(pressureSensor);
+        pressureSensorsRepository.save(pressureSensor);
     }
 
-//    public void entryPressureSensor(List<PressureSensor> pressureSensorList) {
+    public List<PressureSensor> getAllPressureInformation() {
+
+        return IteratorUtils.toList(pressureSensorsRepository.findAll().iterator());
+    }
+
+//    public void entryPressureSensor(List<TemperatureSensor> pressureSensorList) {
 //        pressureMapper.insertPressureData(pressureSensorList);
 //    }
 }
