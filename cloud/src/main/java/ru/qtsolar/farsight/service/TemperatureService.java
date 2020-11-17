@@ -4,7 +4,6 @@ package ru.qtsolar.farsight.service;
 import org.apache.commons.collections.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.qtsolar.farsight.domain.PressureSensor;
 import ru.qtsolar.farsight.domain.TemperatureSensor;
 import ru.qtsolar.farsight.redis.repository.TemperatureSensorsRepository;
 
@@ -21,7 +20,7 @@ public class TemperatureService {
         return temperatureSensor.getId();
     }
 
-    public List<TemperatureSensor> getTemperatureSensors() {
+    public List getTemperatureSensors() {
         return IteratorUtils.toList(temperatureSensorsRepository.findAll().iterator());
     }
 }

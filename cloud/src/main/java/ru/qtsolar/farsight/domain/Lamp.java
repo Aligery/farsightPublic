@@ -1,19 +1,18 @@
 package ru.qtsolar.farsight.domain;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
-@RedisHash("pressureSensors")
-public class PressureSensor {
+@RedisHash("lamp")
+public class Lamp {
 
     @Id
     private Long id;
     private String value;
 
-    public PressureSensor(){}
+    public Lamp(){}
 
-    public PressureSensor(Long id, String value) {
+    public Lamp(Long id, String value) {
         this.id = id;
         this.value = value;
     }

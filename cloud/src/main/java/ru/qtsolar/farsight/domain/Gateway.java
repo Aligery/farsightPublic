@@ -10,22 +10,28 @@ import java.util.List;
 public class Gateway {
 
     @Id
-    private String id;
-    private List<Long> foreingKeySensors;
+    private Long id;
+    private String message;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public List<Long> getForeingKeySensors() {
-        return foreingKeySensors;
+    public String getMessage() {
+        return message;
     }
 
-    public void setForeingKeySensors(List<Long> foreingKeySensors) {
-        this.foreingKeySensors = foreingKeySensors;
+    public Gateway(Long id, String message) {
+        this.id = id;
+        this.message = message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+
     }
 }
